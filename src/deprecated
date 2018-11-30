@@ -1,0 +1,26 @@
+
+AI:
+private int binarySearch(int min, int max, String[] array, char c)
+    {
+        int index = 0;
+        min = 0; 
+        max = array.length;
+        char letter = array[index].charAt(0);
+        short pos = getPos(c);
+        System.out.println("Binary Search: " +letter + " compared with: " + c + " at position: " + pos);
+        while(letter != c)
+        {
+            index = (min + max)/2;
+            letter = array[index].charAt(0);
+            if(pos > getPos(letter))
+            {
+                min = index;
+            }
+            else
+            {
+                max = index;
+            }
+        }
+        System.out.println("AI: Binary Search - " + array[index]);
+        return index;
+    }
